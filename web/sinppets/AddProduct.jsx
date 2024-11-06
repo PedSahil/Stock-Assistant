@@ -12,7 +12,7 @@ const AddProduct = ({id}) => {
     const fetchProducts = async () => {
       try {
         // console.log(distributorId)
-        const response = await fetch(`http://localhost:5000/api/products/${id}`);
+        const response = await fetch(`${process.env.BACKEND_URL}/api/products/${id}`);
         const data = await response.json();
         setProducts(data);
         setLoading(false);
@@ -43,7 +43,7 @@ const AddProduct = ({id}) => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+      const response = await fetch(`${process.env.BACKEND_URL}/api/products/${id}`, {
         method: "DELETE",
       });
 
@@ -76,7 +76,7 @@ const AddProduct = ({id}) => {
             w="100%"
           >
             <Box w="20%" boxSize="3rem" bgColor="yellow.600">
-              <Image src={`http://localhost:5000/${product.image}`} />
+              <Image src={`${process.env.BACKEND_URL}/${product.image}`} />
             </Box>
             <Text w="40%">{product.productName}</Text>
             <Text w="10%">{product.price}</Text>

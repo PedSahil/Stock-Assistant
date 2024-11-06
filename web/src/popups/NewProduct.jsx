@@ -32,7 +32,7 @@ const NewProduct = ({distributorId}) => {
 
     try {
       console.log(1);
-      const response = await fetch(`http://localhost:5000/api/products/${distributorId}`, {
+      const response = await fetch(`${process.env.BACKEND_URL}/api/products/${distributorId}`, {
         method: "POST",
         body: formData,
       });

@@ -15,7 +15,7 @@ const SearchBar = () => {
       // Start searching only when there are enough characters
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/products/search?q=${searchQuery}`
+          `${process.env.BACKEND_URL}/api/products/search?q=${searchQuery}`
         );
         setResults(response.data);
       } catch (error) {

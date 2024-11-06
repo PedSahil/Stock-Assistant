@@ -10,7 +10,7 @@ const ExpiryList = () => {
     const fetchExpiringProducts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/products/expiry"
+          ` ${process.env.BACKEND_URL}/api/products/expiry`
         );
         setExpiringProducts(response.data);
         console.log(expiringProducts);

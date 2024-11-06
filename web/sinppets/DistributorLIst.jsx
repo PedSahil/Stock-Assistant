@@ -10,7 +10,7 @@ const DistributorList = () => {
     // Fetch products from the backend API
     const fetchDistributors = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/distributors");
+        const response = await fetch("${process.env.BACKEND_URL}/api/distributors");
         const data = await response.json();
         setDistributors(data);
         setLoading(false);
@@ -30,7 +30,7 @@ const DistributorList = () => {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/distributors/${id}`,
+        `${process.env.BACKEND_URL}/api/distributors/${id}`,
         {
           method: "DELETE",
         }
