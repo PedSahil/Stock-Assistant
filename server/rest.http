@@ -1,0 +1,10 @@
+POST http://localhost:5000/api/products/:2345
+Content-Type: application/json 
+
+{
+    "productName": "product 1",
+    "price": "24t",
+    "expiry" :"10/17/2024",
+    "image":"ashdgbh",
+    "id":"2345"
+}
