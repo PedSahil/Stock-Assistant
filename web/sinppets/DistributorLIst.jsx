@@ -10,7 +10,7 @@ const DistributorList = () => {
     // Fetch products from the backend API
     const fetchDistributors = async () => {
       try {
-        const response = await fetch("${process.env.BACKEND_URL}/api/distributors");
+        const response = await fetch(`${process.env.BACKEND_URL}/api/distributors`);
         const data = await response.json();
         setDistributors(data);
         setLoading(false);
