@@ -1,6 +1,7 @@
 import { Box, Button, HStack, Image, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Constant_String } from "./Constant";
 
 const DistributorList = () => {
   const [distributors, setDistributors] = useState([]);
@@ -10,7 +11,7 @@ const DistributorList = () => {
     // Fetch products from the backend API
     const fetchDistributors = async () => {
       try {
-        const response = await fetch(`${process.env.BACKEND_URL}/api/distributors`);
+        const response = await fetch(`${Constant_String}/api/distributors`);
         const data = await response.json();
         setDistributors(data);
         setLoading(false);

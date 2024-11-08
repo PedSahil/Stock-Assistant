@@ -2,6 +2,7 @@ import { CheckIcon } from "@chakra-ui/icons";
 import { Button, CheckboxIcon, HStack, Spacer, Text } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Constant_String } from "./Constant";
 
 const ExpiryList = () => {
   const [expiringProducts, setExpiringProducts] = useState([]);
@@ -10,7 +11,7 @@ const ExpiryList = () => {
     const fetchExpiringProducts = async () => {
       try {
         const response = await axios.get(
-          ` ${process.env.BACKEND_URL}/api/products/expiry`
+          ` ${Constant_String}/api/products/expiry`
         );
         setExpiringProducts(response.data);
         console.log(expiringProducts);

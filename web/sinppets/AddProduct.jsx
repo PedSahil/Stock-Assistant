@@ -1,5 +1,6 @@
 import { Box, Button, HStack, Image, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
+import { Constant_String } from "./Constant";
 // import { useParams } from "react-router-dom";
 
 const AddProduct = ({id}) => {
@@ -43,7 +44,7 @@ const AddProduct = ({id}) => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`${process.env.BACKEND_URL}/api/products/${id}`, {
+      const response = await fetch(`${Constant_String}/api/products/${id}`, {
         method: "DELETE",
       });
 

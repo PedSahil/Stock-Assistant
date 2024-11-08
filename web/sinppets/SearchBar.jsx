@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import axios from "axios";
 import { SearchIcon } from "@chakra-ui/icons";
+import { Constant_String } from "./Constant";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -15,7 +16,7 @@ const SearchBar = () => {
       // Start searching only when there are enough characters
       try {
         const response = await axios.get(
-          `${process.env.BACKEND_URL}/api/products/search?q=${searchQuery}`
+          `${Constant_String}/api/products/search?q=${searchQuery}`
         );
         setResults(response.data);
       } catch (error) {

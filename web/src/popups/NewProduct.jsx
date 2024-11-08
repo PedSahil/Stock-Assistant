@@ -13,6 +13,7 @@ import {
   Input,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Constant_String } from "../../sinppets/Constant";
 
 const NewProduct = ({distributorId}) => {
   const { isOpen, onOpen, onClose } = useDisclosure(); // Chakra UI modal controls
@@ -32,7 +33,7 @@ const NewProduct = ({distributorId}) => {
 
     try {
       console.log(1);
-      const response = await fetch(`${process.env.BACKEND_URL}/api/products/${distributorId}`, {
+      const response = await fetch(`${Constant_String}/api/products/${distributorId}`, {
         method: "POST",
         body: formData,
       });

@@ -25,5 +25,5 @@ app.use('/api/distributors',distributorRoutes)
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Server running on https://stock-assistant-s04b.onrender.com`);
 });

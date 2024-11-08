@@ -14,6 +14,7 @@ import {
   Input,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Constant_String } from "../../sinppets/Constant";
 
 const NewDistributor = () => {
   const { isOpen, onOpen, onClose } = useDisclosure(); // Chakra UI modal controls
@@ -31,7 +32,7 @@ const NewDistributor = () => {
     };
   
     try {
-      const response = await axios.post(`${process.env.BACKEND_URL}/api/distributors`, data, {
+      const response = await axios.post(`${Constant_String}/api/distributors`, data, {
         headers: {
           "Content-Type": "application/json",
         },
