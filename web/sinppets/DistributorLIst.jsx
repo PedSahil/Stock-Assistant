@@ -2,10 +2,12 @@ import { Box, Button, HStack, Image, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Constant_String } from "./Constant";
+import { useNavigate } from "react-router-dom";
 
 const DistributorList = () => {
   const [distributors, setDistributors] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Fetch products from the backend API
@@ -31,12 +33,12 @@ const DistributorList = () => {
   const handleDelete = async (id) => {
     try {
       const response = await fetch(
-        `${process.env.BACKEND_URL}/api/distributors/${id}`,
+        `${Constant_String}/api/distributors/${id}`,
         {
           method: "DELETE",
         }
       );
-      console.log(response)
+      console.log(response);
       if (response.ok) {
         // Remove deleted product from the state
         setDistributors(
@@ -58,11 +60,17 @@ const DistributorList = () => {
   return (
     <Box p="1rem" bgColor="white" mb="1rem" w="100%">
       {distributors.map((distributor) => (
-        <Link key={distributor.distributorId} to={`/products/${distributor.distributorId}`}>
+        <Box
+          onClick={() => {
+            navigate(`/products/${distributor.distributorId}`);
+            console.log(distributor.distributorId);
+          }}
+          key={distributor.distributorId}
+        >
           <HStack
             p="2rem"
             m="1rem"
-            bg='green.100'
+            bg="green.100"
             justifyContent="space-between"
             h="2rem"
             w="100%"
@@ -78,7 +86,7 @@ const DistributorList = () => {
               Delete
             </Button>
           </HStack>
-        </Link>
+        </Box>
       ))}
     </Box>
   );

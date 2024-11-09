@@ -13,7 +13,7 @@ const AddProduct = ({id}) => {
     const fetchProducts = async () => {
       try {
         // console.log(distributorId)
-        const response = await fetch(`${process.env.BACKEND_URL}/api/products/${id}`);
+        const response = await fetch(`${Constant_String}/api/products/${id}`);
         const data = await response.json();
         setProducts(data);
         setLoading(false);
@@ -77,7 +77,7 @@ const AddProduct = ({id}) => {
             w="100%"
           >
             <Box w="20%" boxSize="3rem" bgColor="yellow.600">
-              <Image src={`${process.env.BACKEND_URL}/${product.image}`} />
+              <Image src={`${Constant_String}/${product.image}`} />
             </Box>
             <Text w="40%">{product.productName}</Text>
             <Text w="10%">{product.price}</Text>

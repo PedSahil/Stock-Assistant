@@ -13,7 +13,8 @@ const PORT = process.env.PORT || 5000;
 app.use('/uploads', express.static('uploads'));
 app.use(express.json())
 
-app.use(cors({ origin: 'https://stock-assistant-1.onrender.com' }));
+app.use(cors());
+// app.use(cors({ origin: 'https://stock-assistant-1.onrender.com' }));
 // Connect to MongoDB
 connectDB();
 
