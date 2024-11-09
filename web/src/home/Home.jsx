@@ -24,7 +24,7 @@ const Home = () => {
     <VStack bgColor="#F9F9F9" w="100vw" h="100vh">
       <HStack p="1rem" w="100%" gap="8rem">
         <Box w="10rem" h="4rem">
-          <Image src="../../src/Images/logo.png" alt="logo" />
+          <Image src="../Images/logo.png" alt="logo" />
         </Box>
         <Box>
           <InputGroup>
@@ -45,7 +45,7 @@ const Home = () => {
         <Spacer />
         <HStack gap="3rem">
           <Box boxSize="2.5rem">
-            <Image src="../../src/Images/profile.png" alt="logo" />
+            <Image src="../Images/profile.png" alt="logo" />
           </Box>
           <Button colorScheme="red">Sign out</Button>
         </HStack>
